@@ -24,17 +24,26 @@ botao.addEventListener('click', () => {
 
 // Scroll suave para links de navegação
 const navLinks = document.querySelectorAll('#menu ul a.link');
+const header = document.querySelector('header');
+
+const atualizarOffsetScroll = () => {
+  const headerHeight = header ? header.offsetHeight : 0;
+  document.documentElement.style.setProperty('--offset-top', `${headerHeight + 20}px`);
+};
+
+atualizarOffsetScroll();
+window.addEventListener('resize', atualizarOffsetScroll);
+
 navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const targetPosition = target.offsetTop - headerHeight - 20;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+   link.addEventListener('click', event => {
+    const targetId = link.getAttribute('href');
+    const target = targetId ? document.querySelector(targetId) : null;
+
+    if (!target) {
+      return;
     }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });

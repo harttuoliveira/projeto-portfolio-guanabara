@@ -8,6 +8,7 @@
   --fundo-card
 */
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,6 +22,11 @@
   --destaque: #0077FF;
   --destaque-inverso: #66bbff;
   --fundo-card: #ffffff;
+  --offset-top: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,6 +34,11 @@ body {
   line-height: 1.5em;
   background-color: var(--fundo-principal);
   color: var(--texto);
+}
+
+section[id],
+article[id] {
+  scroll-margin-top: var(--offset-top);
 }
 
 header {
