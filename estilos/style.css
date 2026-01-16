@@ -251,12 +251,57 @@ article h2 {
   border-radius: 8px;
 }
 
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  gap: 15px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.form-item input,
+.form-item textarea {
+  background-color: var(--fundo-principal);
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid var(--destaque-inverso);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.form-item textarea {
+  resize: none;
+}
+
+.form-item input:focus,
+.form-item textarea:focus {
+  outline: none;
+  border-color: var(--destaque);
+}
+
+.botao {
+  background: linear-gradient(135deg, var(--destaque-inverso) 0%, var(--destaque) 100%);
+  color: var(--texto-inverso);
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
 footer {
   background-color: var(--destaque);
   color: var(--texto-inverso);
   text-align: center;
   padding: 15px;
-  margin-top: 20px;
+
 }
 
 footer a {
