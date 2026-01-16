@@ -296,6 +296,10 @@ article h2 {
   transition: background-color 0.5s;
 }
 
+.botao:hover {
+  background: linear-gradient(135deg, #51b1ff 0%, #0062d3 100%);
+}
+
 footer {
   background-color: var(--destaque);
   color: var(--texto-inverso);
@@ -315,6 +319,26 @@ footer a:hover {
 }
 
 @media (min-width: 768px) {
+
+  main {
+    grid-template-columns: auto 300px 1fr auto;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 65px;
+    align-self: start;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
+  #video h2 > i:first-child {
+    display: none;
+  }
   
   article h2 {
     font-size: 1.8em;
@@ -342,5 +366,32 @@ footer a:hover {
   #projeto-container .foto {
     aspect-ratio: 1/1;
     max-width: 20%;
+  }
+
+  
+  .form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-item input,
+  .form-item textarea {
+    padding: 12px;
+  }
+
+  .form-item input::placeholder,
+  .form-item textarea::placeholder {
+    font-size: 1.1em;
+  }
+
+  .botao {
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #video h2 > i:last-child {
+    display: none;
   }
 }
