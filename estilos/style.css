@@ -22,11 +22,19 @@
   --destaque: #0077FF;
   --destaque-inverso: #66bbff;
   --fundo-card: #ffffff;
-  --offset-top: 0px;
+  --destaque-hover: #005fcc;
+  --destaque-inverso-hover: #66bbff;
 }
 
-html {
-  scroll-behavior: smooth;
+body.escuro {
+  --fundo-principal: #121212;
+  --texto: #e0e0e0;
+  --texto-inverso: #121212;
+  --destaque: #CF00FF;
+  --destaque-inverso: #7300F0;
+  --fundo-card: #1e1e1e;
+  --destaque-hover: #bb00e6;
+  --destaque-inverso-hover: #460093;
 }
 
 body {
@@ -34,11 +42,7 @@ body {
   line-height: 1.5em;
   background-color: var(--fundo-principal);
   color: var(--texto);
-}
-
-section[id],
-article[id] {
-  scroll-margin-top: var(--offset-top);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 header {
@@ -297,7 +301,7 @@ article h2 {
 }
 
 .botao:hover {
-  background: linear-gradient(135deg, #51b1ff 0%, #0062d3 100%);
+  background: linear-gradient(135deg, var(--destaque-inverso-hover) 0%, var(--destaque-hover) 100%);
 }
 
 footer {
